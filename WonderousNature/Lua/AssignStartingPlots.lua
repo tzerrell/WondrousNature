@@ -6046,12 +6046,11 @@ function AssignStartingPlots:PlaceNaturalWonders()
 		return
 	end
 	
-	--[[ Debug printout
 	print("-"); print("--- Readout of NW Assignment Priority ---");
 	for print_loop, order in ipairs(NW_eligibility_order) do
 		print("NW Assignment Priority#", print_loop, "goes to NW#", order);
 	end
-	print("-"); print("-"); ]]--
+	print("-"); print("-");
 	
 	-- Determine how many NWs to attempt to place. Target is regulated per map size.
 	-- The final number cannot exceed the number the map has locations to support.
@@ -6074,7 +6073,6 @@ function AssignStartingPlots:PlaceNaturalWonders()
 		end
 	end
 	
-	--[[
 	print("-");
 	for loop, NW in ipairs(selected_NWs) do
 		print("Natural Wonder #", NW, "has been selected for placement.");
@@ -6086,7 +6084,6 @@ function AssignStartingPlots:PlaceNaturalWonders()
 	print("-");
 	--
 	print("--- Placing Natural Wonders! ---");
-	]]--
 	
 	-- Place the NWs
 	local iNumPlaced = 0;

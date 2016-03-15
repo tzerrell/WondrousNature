@@ -29,7 +29,7 @@
 			<InfluenceCost>-3</InfluenceCost>
 			<PseudoNaturalWonder>true</PseudoNaturalWonder>
 			<NoImprovement>true</NoImprovement>
-			<OccurrenceFrequency>10</OccurrenceFrequency>
+			<OccurrenceFrequency>100</OccurrenceFrequency>
 			<Rough>false</Rough>
 			<YieldNotAdditive>true</YieldNotAdditive>
 			<PortraitIndex>1</PortraitIndex>
