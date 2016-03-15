@@ -53,12 +53,12 @@
 	<ArtDefine_StrategicView>
 		<Row>
 			<StrategicViewType>ART_DEF_FEATURE_TEST_WONDER</StrategicViewType>
-			<TileType>Resource</TileType>
+			<TileType>Feature</TileType>
 			<Asset>sv_amber.dds</Asset>
 		</Row>
 		<Row>
 			<StrategicViewType>ART_DEF_FEATURE_SALAR_DE_UYUNI</StrategicViewType>
-			<TileType>Resource</TileType>
+			<TileType>Feature</TileType>
 			<Asset>sv_amber.dds</Asset>
 		</Row>
 		<Row>
