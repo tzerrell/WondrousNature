@@ -8,16 +8,16 @@
 			<Civilopedia>TXT_KEY_CIV5_FEATURES_TEST_WONDER_TEXT</Civilopedia>
 			<ArtDefineTag>ART_DEF_FEATURE_TEST_WONDER</ArtDefineTag>
 			<Movement>1</Movement>
-			<Impassable>true</Impassable>
+			<Impassable>false</Impassable>
 			<InfluenceCost>-3</InfluenceCost>
 			<AddsFreshWater>true</AddsFreshWater>
 			<PseudoNaturalWonder>true</PseudoNaturalWonder>
 			<NoImprovement>true</NoImprovement>
-			<OccurrenceFrequency>10</OccurrenceFrequency>
 			<Rough>true</Rough>
 			<YieldNotAdditive>true</YieldNotAdditive>
 			<PortraitIndex>0</PortraitIndex>
 			<IconAtlas>CUSTOM_NATURAL_WONDER_ATLAS</IconAtlas>
+			<TurnDamage>5</TurnDamage><!--TODO-->
 		</Row>
 		<Row>
 			<Type>FEATURE_SALAR_DE_UYUNI</Type>
@@ -29,7 +29,6 @@
 			<InfluenceCost>-3</InfluenceCost>
 			<PseudoNaturalWonder>true</PseudoNaturalWonder>
 			<NoImprovement>true</NoImprovement>
-			<OccurrenceFrequency>100</OccurrenceFrequency>
 			<Rough>false</Rough>
 			<YieldNotAdditive>true</YieldNotAdditive>
 			<PortraitIndex>1</PortraitIndex>
@@ -45,12 +44,10 @@
 			<InfluenceCost>-3</InfluenceCost>
 			<PseudoNaturalWonder>true</PseudoNaturalWonder>
 			<NoImprovement>true</NoImprovement>
-			<OccurrenceFrequency>10</OccurrenceFrequency>
 			<Rough>true</Rough>
 			<YieldNotAdditive>true</YieldNotAdditive>
 			<PortraitIndex>2</PortraitIndex>
 			<IconAtlas>CUSTOM_NATURAL_WONDER_ATLAS</IconAtlas>
-			<TurnDamage>5</TurnDamage><!--TODO-->
 		</Row>
 	</Features>
 	<Feature_YieldChanges>
@@ -111,19 +108,44 @@
 	<Natural_Wonder_Placement>
 		<Row>
 			<NaturalWonderType>FEATURE_TEST_WONDER</NaturalWonderType>
+			<OccurrenceFrequency>0</OccurrenceFrequency>
 			<AvoidLandAdjacentToOcean>true</AvoidLandAdjacentToOcean>
 			<ChangeCoreTileToFlatland>true</ChangeCoreTileToFlatland>
 			<ChangeCoreTileTerrainToPlains>true</ChangeCoreTileTerrainToPlains>
 		</Row>
 		<Row>
 			<NaturalWonderType>FEATURE_SALAR_DE_UYUNI</NaturalWonderType>
+			<OccurrenceFrequency>100</OccurrenceFrequency>
 			<AvoidLandAdjacentToOcean>true</AvoidLandAdjacentToOcean>
 			<AvoidFreshWater>true</AvoidFreshWater>
 			<ChangeCoreTileToFlatland>true</ChangeCoreTileToFlatland>
+			<CoreTileCanBeAnyTerrainType>false</CoreTileCanBeAnyTerrainType>
+			<CoreTileCanBePlains>true</CoreTileCanBePlains>
+			<CoreTileCanBeDesert>true</CoreTileCanBeDesert>
+			<CoreTileCanBeAnyFeatureType>false</CoreTileCanBeAnyFeatureType>
+			<CoreTileCanBeNoFeature>true</CoreTileCanBeNoFeature>
+			<AdjacentTilesCareAboutTerrainTypes>true</AdjacentTilesCareAboutTerrainTypes>
+			<AdjacentTilesAvoidGrass>true</AdjacentTilesAvoidGrass>
+			<MaximumAllowedAdjacentGrass>0</MaximumAllowedAdjacentGrass>
+			<AdjacentTilesAvoidSnow>true</AdjacentTilesAvoidSnow>
+			<MaximumAllowedAdjacentSnow>0</MaximumAllowedAdjacentSnow>
+			<AdjacentTilesCareAboutFeatureTypes>true</AdjacentTilesCareAboutFeatureTypes>
+			<AdjacentTilesAvoidForest>true</AdjacentTilesAvoidForest>
+			<MaximumAllowedAdjacentForest>0</MaximumAllowedAdjacentForest>
+			<AdjacentTilesAvoidJungle>true</AdjacentTilesAvoidJungle>
+			<MaximumAllowedAdjacentJungle>0</MaximumAllowedAdjacentJungle>
+			<AdjacentTilesAvoidMarsh>true</AdjacentTilesAvoidMarsh>
+			<MaximumAllowedAdjacentMarsh>0</MaximumAllowedAdjacentMarsh>
 		</Row>
 		<Row>
 			<NaturalWonderType>FEATURE_GIANTS_CAUSEWAY</NaturalWonderType>
-			<!--TODO Below...-->
+			<OccurrenceFrequency>100</OccurrenceFrequency>
+			<AvoidFreshWater>true</AvoidFreshWater>
+			<LandBased>false</LandBased>
+			<CoreTileCanBeAnyTerrainType>false</CoreTileCanBeAnyTerrainType>
+			<CoreTileCanBeShallowWater>true</CoreTileCanBeShallowWater>
+			<AdjacentTilesAvoidOcean>true</AdjacentTilesAvoidOcean>
+			<MaximumAllowedAdjacentOcean>5</MaximumAllowedAdjacentOcean>
 		</Row>
 	</Natural_Wonder_Placement>
 	<Language_en_US>
