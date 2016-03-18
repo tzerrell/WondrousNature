@@ -144,6 +144,7 @@
 			<LandBased>false</LandBased>
 			<CoreTileCanBeAnyTerrainType>false</CoreTileCanBeAnyTerrainType>
 			<CoreTileCanBeShallowWater>true</CoreTileCanBeShallowWater>
+			<AdjacentTilesCareAboutPlotTypes>true</AdjacentTilesCareAboutPlotTypes>
 			<AdjacentTilesAvoidOcean>true</AdjacentTilesAvoidOcean>
 			<MaximumAllowedAdjacentOcean>5</MaximumAllowedAdjacentOcean>
 		</Row>
