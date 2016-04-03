@@ -32,6 +32,16 @@
 			<Model>feature_causeway.fxsxml</Model>
 			<TerrainContour>1</TerrainContour>
 		</Row>
+		<Row>
+			<Era>Any</Era>
+			<State>Any</State>
+			<Scale>1</Scale>
+			<ImprovementType>ART_DEF_IMPROVEMENT_NONE</ImprovementType>
+			<LayoutHandler>SNAPSHOT</LayoutHandler>
+			<ResourceType>ART_DEF_FEATURE_MT_EVEREST</ResourceType>
+			<Model>feature_everest.fxsxml</Model>
+			<TerrainContour>1</TerrainContour>
+		</Row>
 	</ArtDefine_Landmarks>
 	<ArtDefine_LandmarkTypes>
 		<Row>
@@ -49,6 +59,11 @@
 			<LandmarkType>Resource</LandmarkType>
 			<FriendlyName>Giant's Causeway</FriendlyName>
 		</Row>
+		<Row>
+			<Type>ART_DEF_FEATURE_MT_EVEREST</Type>
+			<LandmarkType>Resource</LandmarkType>
+			<FriendlyName>Mount Everest</FriendlyName>
+		</Row>
 	</ArtDefine_LandmarkTypes>
 	<ArtDefine_StrategicView>
 		<Row>
@@ -65,6 +80,11 @@
 			<StrategicViewType>ART_DEF_FEATURE_GIANTS_CAUSEWAY</StrategicViewType>
 			<TileType>Feature</TileType>
 			<Asset>sv_giants_causeway.dds</Asset>
+		</Row>
+		<Row>
+			<StrategicViewType>ART_DEF_FEATURE_MT_EVEREST</StrategicViewType>
+			<TileType>Feature</TileType>
+			<Asset>sv_everest.dds</Asset>
 		</Row>
 	</ArtDefine_StrategicView>
 </GameData>

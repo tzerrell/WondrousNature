@@ -49,6 +49,21 @@
 			<PortraitIndex>2</PortraitIndex>
 			<IconAtlas>CUSTOM_NATURAL_WONDER_ATLAS</IconAtlas>
 		</Row>
+		<Row>
+			<Type>FEATURE_MT_EVEREST</Type>
+			<Description>TXT_KEY_FEATURE_MT_EVEREST</Description>
+			<Civilopedia>TXT_KEY_CIV5_FEATURES_MT_EVEREST_TEXT</Civilopedia>
+			<ArtDefineTag>ART_DEF_FEATURE_MT_EVEREST</ArtDefineTag>
+			<Movement>1</Movement>
+			<Impassable>true</Impassable>
+			<InfluenceCost>-3</InfluenceCost>
+			<PseudoNaturalWonder>true</PseudoNaturalWonder>
+			<NoImprovement>true</NoImprovement>
+			<Rough>true</Rough>
+			<YieldNotAdditive>true</YieldNotAdditive>
+			<PortraitIndex>3</PortraitIndex>
+			<IconAtlas>CUSTOM_NATURAL_WONDER_ATLAS</IconAtlas>
+		</Row>
 	</Features>
 	<Feature_YieldChanges>
 		<!--Test Wonder-->
@@ -88,6 +103,7 @@
 			<YIELDTYPE>YIELD_SCIENCE</YIELDTYPE>
 			<Yield>1</Yield>
 		</Row>
+		<!--Giant's Causeway-->
 		<!--TODO: Would like to remove persistent science bonus and instead add +10 science yield only on discovery of satellites, but don't know how.-->
 		<Row>
 			<FeatureType>FEATURE_GIANTS_CAUSEWAY</FeatureType>
@@ -104,6 +120,23 @@
 			<YIELDTYPE>YIELD_SCIENCE</YIELDTYPE>
 			<Yield>1</Yield>
 		</Row>
+		<!--Mount Everest-->
+		<Row>
+			<FeatureType>FEATURE_MT_EVEREST</FeatureType>
+			<YIELDTYPE>YIELD_FAITH</YIELDTYPE>
+			<Yield>4</Yield>
+		</Row>
+		<Row>
+			<FeatureType>FEATURE_MT_EVEREST</FeatureType>
+			<YIELDTYPE>YIELD_GOLD</YIELDTYPE>
+			<Yield>4</Yield>
+		</Row>
+		<Row>
+			<FeatureType>FEATURE_MT_EVEREST</FeatureType>
+			<YIELDTYPE>YIELD_CULTURE</YIELDTYPE>
+			<Yield>4</Yield>
+		</Row>
+		<!--TODO: Everest should also give 4 happiness-->
 	</Feature_YieldChanges>
 	<Natural_Wonder_Placement>
 		<Row>
@@ -148,6 +181,16 @@
 			<AdjacentTilesAvoidOcean>true</AdjacentTilesAvoidOcean>
 			<MaximumAllowedAdjacentOcean>5</MaximumAllowedAdjacentOcean>
 		</Row>
+		<Row>
+			<NaturalWonderType>FEATURE_MT_EVEREST</NaturalWonderType>
+			<OccurrenceFrequency>15</OccurrenceFrequency>
+			<AvoidsFreshWater>true</AvoidsFreshWater>
+			<LandBased>true</LandBased>
+			<ChangeCoreTileToMountain>true</ChangeCoreTileToMountain>
+			<AdjacentTilesCareAboutPlotTypes>true</AdjacentTilesCareAboutPlotTypes>
+			<AdjacentTilesRequireMountain>true</AdjacentTilesRequireMountain>
+			<RequiredNumberOfAdjacentMountain>6</RequiredNumberOfAdjacentMountain>
+		</Row>
 	</Natural_Wonder_Placement>
 	<Language_en_US>
 		<Row Tag="TXT_KEY_FEATURE_TEST_WONDER">
@@ -170,6 +213,13 @@
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_FEATURES_GIANTS_CAUSEWAY_TEXT">
 			<Text>TODO: Giant's Causeway needs a description</Text>
+		</Row>
+		<Row Tag="TXT_KEY_FEATURE_MT_EVEREST">
+			<Text>Mount Everest</Text>
+			<Gender>neuter:no_article</Gender>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_FEATURES_MT_EVEREST_TEXT">
+			<Text>TODO: Mount Everest needs a description</Text>
 		</Row>
 	</Language_en_US>
 	<IconTextureAtlases>
