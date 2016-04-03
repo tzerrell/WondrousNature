@@ -59,12 +59,12 @@
 		<Row>
 			<StrategicViewType>ART_DEF_FEATURE_SALAR_DE_UYUNI</StrategicViewType>
 			<TileType>Feature</TileType>
-			<Asset>sv_amber.dds</Asset>
+			<Asset>sv_salar.dds</Asset>
 		</Row>
 		<Row>
 			<StrategicViewType>ART_DEF_FEATURE_GIANTS_CAUSEWAY</StrategicViewType>
 			<TileType>Feature</TileType>
-			<Asset>sv_amber.dds</Asset>
+			<Asset>sv_giants_causeway.dds</Asset>
 		</Row>
 	</ArtDefine_StrategicView>
 </GameData>
