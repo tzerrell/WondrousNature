@@ -1,0 +1,10 @@
+*.Civ5Map
+*.7z
+/Build
+/Packages
+*.gr2
+*.br2
+*.dds
+*.blend*
+*.xcf
+*.fbx
