@@ -58,7 +58,7 @@
     <Folder Include="Art" />
     <Folder Include="Art\Blight" />
     <Folder Include="Art\Giant%27s Causeway" />
-    <Folder Include="Art\Salar de Uyuna" />
+    <Folder Include="Art\Salar de Uyuni" />
     <Folder Include="Art\Test Wonder" />
     <Folder Include="Lua" />
     <Folder Include="XML" />
@@ -124,23 +124,19 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
-    <Content Include="Art\Salar de Uyuna\feature_crater.gr2">
+    <Content Include="Art\Salar de Uyuni\feature_salar.gr2">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
-    <Content Include="Art\Salar de Uyuna\feature_salar.gr2">
+    <Content Include="Art\Salar de Uyuni\salar_ground_diff.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
-    <Content Include="Art\Salar de Uyuna\salar_ground_diff.dds">
+    <Content Include="Art\Salar de Uyuni\salar_ground_h.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
-    <Content Include="Art\Salar de Uyuna\salar_ground_h.dds">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Salar de Uyuna\sv_salar.dds">
+    <Content Include="Art\Salar de Uyuni\sv_salar.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
