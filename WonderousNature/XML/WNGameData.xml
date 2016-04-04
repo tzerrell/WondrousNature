@@ -50,13 +50,15 @@
 			<IconAtlas>CUSTOM_NATURAL_WONDER_ATLAS</IconAtlas>
 		</Row>
 		<Row>
-			<Type>FEATURE_MT_EVEREST</Type>
-			<Description>TXT_KEY_FEATURE_MT_EVEREST</Description>
+			<Type>FEATURE_EVEREST</Type>
+			<Description>TXT_KEY_FEATURE_EVEREST</Description>
 			<Civilopedia>TXT_KEY_CIV5_FEATURES_MT_EVEREST_TEXT</Civilopedia>
-			<ArtDefineTag>ART_DEF_FEATURE_MT_EVEREST</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_FEATURE_EVEREST</ArtDefineTag>
 			<Movement>1</Movement>
+			<SeeThrough>2</SeeThrough>
 			<Impassable>true</Impassable>
 			<InfluenceCost>-3</InfluenceCost>
+			<!--<InBorderHappiness>4</InBorderHappiness>-->
 			<PseudoNaturalWonder>true</PseudoNaturalWonder>
 			<NoImprovement>true</NoImprovement>
 			<Rough>true</Rough>
@@ -122,21 +124,20 @@
 		</Row>
 		<!--Mount Everest-->
 		<Row>
-			<FeatureType>FEATURE_MT_EVEREST</FeatureType>
+			<FeatureType>FEATURE_EVEREST</FeatureType>
 			<YIELDTYPE>YIELD_FAITH</YIELDTYPE>
 			<Yield>4</Yield>
 		</Row>
 		<Row>
-			<FeatureType>FEATURE_MT_EVEREST</FeatureType>
+			<FeatureType>FEATURE_EVEREST</FeatureType>
 			<YIELDTYPE>YIELD_GOLD</YIELDTYPE>
 			<Yield>4</Yield>
 		</Row>
 		<Row>
-			<FeatureType>FEATURE_MT_EVEREST</FeatureType>
+			<FeatureType>FEATURE_EVEREST</FeatureType>
 			<YIELDTYPE>YIELD_CULTURE</YIELDTYPE>
 			<Yield>4</Yield>
 		</Row>
-		<!--TODO: Everest should also give 4 happiness-->
 	</Feature_YieldChanges>
 	<Natural_Wonder_Placement>
 		<Row>
@@ -182,9 +183,9 @@
 			<MaximumAllowedAdjacentOcean>5</MaximumAllowedAdjacentOcean>
 		</Row>
 		<Row>
-			<NaturalWonderType>FEATURE_MT_EVEREST</NaturalWonderType>
+			<NaturalWonderType>FEATURE_EVEREST</NaturalWonderType>
 			<OccurrenceFrequency>15</OccurrenceFrequency>
-			<AvoidsFreshWater>true</AvoidsFreshWater>
+			<AvoidFreshWater>true</AvoidFreshWater>
 			<LandBased>true</LandBased>
 			<ChangeCoreTileToMountain>true</ChangeCoreTileToMountain>
 			<AdjacentTilesCareAboutPlotTypes>true</AdjacentTilesCareAboutPlotTypes>
@@ -214,7 +215,7 @@
 		<Row Tag="TXT_KEY_CIV5_FEATURES_GIANTS_CAUSEWAY_TEXT">
 			<Text>TODO: Giant's Causeway needs a description</Text>
 		</Row>
-		<Row Tag="TXT_KEY_FEATURE_MT_EVEREST">
+		<Row Tag="TXT_KEY_FEATURE_EVEREST">
 			<Text>Mount Everest</Text>
 			<Gender>neuter:no_article</Gender>
 		</Row>
