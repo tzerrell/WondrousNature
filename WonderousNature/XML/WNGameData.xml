@@ -55,10 +55,10 @@
 			<Civilopedia>TXT_KEY_CIV5_FEATURES_MT_EVEREST_TEXT</Civilopedia>
 			<ArtDefineTag>ART_DEF_FEATURE_EVEREST</ArtDefineTag>
 			<Movement>1</Movement>
-			<SeeThrough>2</SeeThrough>
+			<SeeThrough>3</SeeThrough> <!--appears not to do anything useful for this wonder-->
 			<Impassable>true</Impassable>
 			<InfluenceCost>-3</InfluenceCost>
-			<!--<InBorderHappiness>4</InBorderHappiness>-->
+			<InBorderHappiness>2</InBorderHappiness>
 			<PseudoNaturalWonder>true</PseudoNaturalWonder>
 			<NoImprovement>true</NoImprovement>
 			<Rough>true</Rough>

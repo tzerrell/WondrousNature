@@ -39,7 +39,7 @@
 			<ImprovementType>ART_DEF_IMPROVEMENT_NONE</ImprovementType>
 			<LayoutHandler>SNAPSHOT</LayoutHandler>
 			<ResourceType>ART_DEF_FEATURE_EVEREST</ResourceType>
-			<Model>feature_everet.fxsxml</Model>
+			<Model>feature_everest.fxsxml</Model>
 			<TerrainContour>1</TerrainContour>
 		</Row>
 	</ArtDefine_Landmarks>
