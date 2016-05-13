@@ -3,10 +3,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Default</Configuration>
     <ProjectGuid>{a502e373-a1ef-4a4a-8790-ad9a13da221e}</ProjectGuid>
-    <Name>Wonderous Nature</Name>
+    <Name>WondrousNature</Name>
     <Guid>75670f8b-b6c1-4502-9fc6-3ca093a95d13</Guid>
     <ModVersion>1</ModVersion>
-    <Stability>Alpha</Stability>
+    <Stability>Beta</Stability>
     <Teaser>Adds additional natural wonders</Teaser>
     <Description>Adds additional natural wonders</Description>
     <Authors>Lamil Lerran</Authors>
@@ -15,7 +15,7 @@
     <AffectsSavedGames>true</AffectsSavedGames>
     <MinCompatibleSaveVersion>0</MinCompatibleSaveVersion>
     <SupportsSinglePlayer>true</SupportsSinglePlayer>
-    <SupportsMultiplayer>true</SupportsMultiplayer>
+    <SupportsMultiplayer>false</SupportsMultiplayer>
     <SupportsHotSeat>true</SupportsHotSeat>
     <SupportsMac>true</SupportsMac>
     <AssemblyName>WonderousNature</AssemblyName>
