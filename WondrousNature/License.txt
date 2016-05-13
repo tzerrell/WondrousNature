@@ -1,0 +1,5 @@
+The code in the modinfo, DLL, LUA, SQL and XML files is related to Civilization V code and may have corresponding licensing restrictions.
+
+The template used in the NaturalWonderAtlas*.dds files is based on a Civ V template. Additionally, the image in that file used for Salar de Uyuni is [TODO: CC info]
+
+All of my own work is hereby released into the public domain. In particular, the art assets (in the Art folder) other than the NaturalWonderAtlas*.dds files are entirely my work and are released into the public domain.
