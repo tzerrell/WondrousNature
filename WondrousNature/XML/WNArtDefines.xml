@@ -47,7 +47,7 @@
 		<Row>
 			<Type>ART_DEF_FEATURE_EVEREST</Type>
 			<LandmarkType>Resource</LandmarkType>
-			<FriendlyName>Mount Everest</FriendlyName>
+			<FriendlyName>Mt Everest</FriendlyName>
 		</Row>
 	</ArtDefine_LandmarkTypes>
 	<ArtDefine_StrategicView>
