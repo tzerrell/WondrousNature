@@ -1,7 +1,0 @@
-<Asset>
-	<Mesh file="Feature_Kilimanjaro.gr2" source="Max" />
-	<Texture file="Oil1_Decal_H.dds" source="Max" />
-	<Texture file="Kilimanjaro_Ground_Diff.dds" source="Max" />
-	<Texture file="Kilimanjaro_Ground_H.dds" source="Max" />
-	<Texture file="Kilimanjaro_Ground_SREF.dds" source="Max" />
-</Asset>
