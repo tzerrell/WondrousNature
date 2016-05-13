@@ -3,23 +3,6 @@
 <GameData>
 	<Features>
 		<Row>
-			<Type>FEATURE_TEST_WONDER</Type>
-			<Description>TXT_KEY_FEATURE_TEST_WONDER</Description>
-			<Civilopedia>TXT_KEY_CIV5_FEATURES_TEST_WONDER_TEXT</Civilopedia>
-			<ArtDefineTag>ART_DEF_FEATURE_TEST_WONDER</ArtDefineTag>
-			<Movement>1</Movement>
-			<Impassable>false</Impassable>
-			<InfluenceCost>-3</InfluenceCost>
-			<AddsFreshWater>true</AddsFreshWater>
-			<PseudoNaturalWonder>true</PseudoNaturalWonder>
-			<NoImprovement>true</NoImprovement>
-			<Rough>true</Rough>
-			<YieldNotAdditive>true</YieldNotAdditive>
-			<PortraitIndex>0</PortraitIndex>
-			<IconAtlas>CUSTOM_NATURAL_WONDER_ATLAS</IconAtlas>
-			<TurnDamage>5</TurnDamage><!--TODO-->
-		</Row>
-		<Row>
 			<Type>FEATURE_SALAR_DE_UYUNI</Type>
 			<Description>TXT_KEY_FEATURE_SALAR_DE_UYUNI</Description>
 			<Civilopedia>TXT_KEY_CIV5_FEATURES_SALAR_DE_UYUNI_TEXT</Civilopedia>
@@ -68,22 +51,6 @@
 		</Row>
 	</Features>
 	<Feature_YieldChanges>
-		<!--Test Wonder-->
-		<Row>
-			<FeatureType>FEATURE_TEST_WONDER</FeatureType>
-			<YieldType>YIELD_FOOD</YieldType>
-			<Yield>1</Yield>
-		</Row>
-		<Row>
-			<FeatureType>FEATURE_TEST_WONDER</FeatureType>
-			<YieldType>YIELD_CULTURE</YieldType>
-			<Yield>2</Yield>
-		</Row>
-		<Row>
-			<FeatureType>FEATURE_TEST_WONDER</FeatureType>
-			<YieldType>YIELD_PRODUCTION</YieldType>
-			<Yield>1</Yield>
-		</Row>
 		<!--Salar de Uyuni-->
 		<Row>
 			<FeatureType>FEATURE_SALAR_DE_UYUNI</FeatureType>
@@ -141,13 +108,6 @@
 	</Feature_YieldChanges>
 	<Natural_Wonder_Placement>
 		<Row>
-			<NaturalWonderType>FEATURE_TEST_WONDER</NaturalWonderType>
-			<OccurrenceFrequency>0</OccurrenceFrequency>
-			<AvoidLandAdjacentToOcean>true</AvoidLandAdjacentToOcean>
-			<ChangeCoreTileToFlatland>true</ChangeCoreTileToFlatland>
-			<ChangeCoreTileTerrainToPlains>true</ChangeCoreTileTerrainToPlains>
-		</Row>
-		<Row>
 			<NaturalWonderType>FEATURE_SALAR_DE_UYUNI</NaturalWonderType>
 			<OccurrenceFrequency>10</OccurrenceFrequency>
 			<AvoidLandAdjacentToOcean>true</AvoidLandAdjacentToOcean>
@@ -194,13 +154,6 @@
 		</Row>
 	</Natural_Wonder_Placement>
 	<Language_en_US>
-		<Row Tag="TXT_KEY_FEATURE_TEST_WONDER">
-			<Text>Test Wonder</Text>
-			<Gender>neuter:no_article</Gender>
-		</Row>
-		<Row Tag="TXT_KEY_CIV5_FEATURES_TEST_WONDER_TEXT">
-			<Text>Test Wonder is a spectacular display of naturally occurring test code. While civilizations in the game seem perfectly capable of making use of it, the presence of Test Wonder in a game is indicative of a serious coding oversite, and should be reported as a bug to the maintainers of the Wonderous Nature mod.</Text>
-		</Row>
 		<Row Tag="TXT_KEY_FEATURE_SALAR_DE_UYUNI">
 			<Text>Salar de Uyuni</Text>
 			<Gender>neuter:no_article</Gender>

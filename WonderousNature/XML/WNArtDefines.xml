@@ -8,16 +8,6 @@
 			<Scale>1</Scale>
 			<ImprovementType>ART_DEF_IMPROVEMENT_NONE</ImprovementType>
 			<LayoutHandler>SNAPSHOT</LayoutHandler>
-			<ResourceType>ART_DEF_FEATURE_TEST_WONDER</ResourceType>
-			<Model>resource_coffee.fxsxml</Model>
-			<TerrainContour>1</TerrainContour>
-		</Row>
-		<Row>
-			<Era>Any</Era>
-			<State>Any</State>
-			<Scale>1</Scale>
-			<ImprovementType>ART_DEF_IMPROVEMENT_NONE</ImprovementType>
-			<LayoutHandler>SNAPSHOT</LayoutHandler>
 			<ResourceType>ART_DEF_FEATURE_SALAR_DE_UYUNI</ResourceType>
 			<Model>feature_salar.fxsxml</Model>
 			<TerrainContour>1</TerrainContour>
@@ -45,11 +35,6 @@
 	</ArtDefine_Landmarks>
 	<ArtDefine_LandmarkTypes>
 		<Row>
-			<Type>ART_DEF_FEATURE_TEST_WONDER</Type> <!-- TODO -->
-			<LandmarkType>Resource</LandmarkType>
-			<FriendlyName>Test Wonder</FriendlyName>
-		</Row>
-		<Row>
 			<Type>ART_DEF_FEATURE_SALAR_DE_UYUNI</Type>
 			<LandmarkType>Resource</LandmarkType>
 			<FriendlyName>Salar de Uyuni</FriendlyName>
@@ -66,11 +51,6 @@
 		</Row>
 	</ArtDefine_LandmarkTypes>
 	<ArtDefine_StrategicView>
-		<Row>
-			<StrategicViewType>ART_DEF_FEATURE_TEST_WONDER</StrategicViewType>
-			<TileType>Feature</TileType>
-			<Asset>sv_amber.dds</Asset>
-		</Row>
 		<Row>
 			<StrategicViewType>ART_DEF_FEATURE_SALAR_DE_UYUNI</StrategicViewType>
 			<TileType>Feature</TileType>
