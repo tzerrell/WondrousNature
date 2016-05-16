@@ -171,7 +171,7 @@
 			According to legend, the causeway was built by an Irish giant in order to respond to a challenge issued by a Scottish giant. The causeway between the islands was destroyed in the resulting fight, with Giant's Causeway the principle remains. There is a smaller cluster of basalt columns across the North Sea in Scotland formed as part of the same ancient lava flow, leading to speculation that these matching columns inspired the legend.</Text>
 		</Row>
 		<Row Tag="TXT_KEY_FEATURE_EVEREST">
-			<Text>Mt Everest</Text>
+			<Text>Mt. Everest</Text>
 			<Gender>neuter:no_article</Gender>
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_FEATURES_MT_EVEREST_TEXT">
