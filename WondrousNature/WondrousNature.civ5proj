@@ -5,7 +5,7 @@
     <ProjectGuid>{a502e373-a1ef-4a4a-8790-ad9a13da221e}</ProjectGuid>
     <Name>Wondrous Nature</Name>
     <Guid>75670f8b-b6c1-4502-9fc6-3ca093a95d13</Guid>
-    <ModVersion>1</ModVersion>
+    <ModVersion>2</ModVersion>
     <Stability>Beta</Stability>
     <Teaser>Adds additional natural wonders</Teaser>
     <Description>Adds additional natural wonders. Currently adds Mount Everest, Salar de Uyuni, and Giant's Causeway.</Description>
