@@ -1,0 +1,204 @@
+From 0c8c50039dc723a8676ef9b63919f9c1dfc7ab77 Mon Sep 17 00:00:00 2001
+From: Lamil Lerran <lamillerran@gmail.com>
+Date: Wed, 2 Mar 2016 10:34:47 -0800
+Subject: [PATCH 1/1] Added PseudoNaturalWonder feature type
+
+---
+ CvGameCoreDLL_Expansion2/CvInfos.cpp                 | 11 +++++++++--
+ CvGameCoreDLL_Expansion2/CvInfos.h                   |  4 +++-
+ CvGameCoreDLL_Expansion2/CvPlot.cpp                  | 16 ++++++++--------
+ CvGameCoreDLL_Expansion2/CvPlot.h                    |  2 +-
+ CvGameCoreDLL_Expansion2/CvUnit.cpp                  |  2 +-
+ CvGameCoreDLL_Expansion2/CvVotingClasses.cpp         |  2 +-
+ CvGameCoreDLL_Expansion2/CvWorldBuilderMapLoader.cpp |  2 +-
+ 7 files changed, 24 insertions(+), 15 deletions(-)
+
+diff --git a/CvGameCoreDLL_Expansion2/CvInfos.cpp b/CvGameCoreDLL_Expansion2/CvInfos.cpp
+index 7baac21..0f14cb3 100644
+--- a/CvGameCoreDLL_Expansion2/CvInfos.cpp
++++ b/CvGameCoreDLL_Expansion2/CvInfos.cpp
+@@ -4746,6 +4746,7 @@ CvFeatureInfo::CvFeatureInfo() :
+ 	m_bNukeImmune(false),
+ 	m_bRough(false),
+ 	m_bNaturalWonder(false),
++	m_bPseudoNaturalWonder(false),
+ 	m_iWorldSoundscapeScriptId(0),
+ 	m_iEffectProbability(0),
+ 	m_piYieldChange(NULL),
+@@ -4906,9 +4907,14 @@ bool CvFeatureInfo::IsRough() const
+ 	return m_bRough;
+ }
+ //------------------------------------------------------------------------------
+-bool CvFeatureInfo::IsNaturalWonder() const
++bool CvFeatureInfo::IsNaturalWonder(bool orPseudoNatural) const
+ {
+-	return m_bNaturalWonder;
++	return m_bNaturalWonder || (orPseudoNatural && IsPseudoNaturalWonder());
++}
++//------------------------------------------------------------------------------
++bool CvFeatureInfo::IsPseudoNaturalWonder() const
++{
++	return m_bPseudoNaturalWonder;
+ }
+ //------------------------------------------------------------------------------
+ const char* CvFeatureInfo::getArtDefineTag() const
+@@ -5037,6 +5043,7 @@ bool CvFeatureInfo::CacheResults(Database::Results& kResults, CvDatabaseUtility&
+ 	m_bNukeImmune = kResults.GetBool("NukeImmune");
+ 	m_bRough = kResults.GetBool("Rough");
+ 	m_bNaturalWonder = kResults.GetBool("NaturalWonder");
++	m_bPseudoNaturalWonder = kResults.GetBool("PseudoNaturalWonder");
+ 
+ 	m_strEffectType = kResults.GetText("EffectType");
+ 	m_strEffectTypeTag = kResults.GetText("EffectTypeTag");
+diff --git a/CvGameCoreDLL_Expansion2/CvInfos.h b/CvGameCoreDLL_Expansion2/CvInfos.h
+index 095ee9e..63b9fec 100644
+--- a/CvGameCoreDLL_Expansion2/CvInfos.h
++++ b/CvGameCoreDLL_Expansion2/CvInfos.h
+@@ -1455,7 +1455,8 @@ public:
+ 	bool isVisibleAlways() const;
+ 	bool isNukeImmune() const;
+ 	bool IsRough() const;
+-	bool IsNaturalWonder() const;
++	bool IsNaturalWonder(bool orPseudoNatural = false) const;
++	bool IsPseudoNaturalWonder() const;
+ 
+ 	const char* getArtDefineTag() const;
+ 	void setArtDefineTag(const char* szTag);
+@@ -1512,6 +1513,7 @@ protected:
+ 	bool m_bNukeImmune;
+ 	bool m_bRough;
+ 	bool m_bNaturalWonder;
++	bool m_bPseudoNaturalWonder;
+ 
+ 	// Set each time the game is started
+ 	bool m_bClearable;
+diff --git a/CvGameCoreDLL_Expansion2/CvPlot.cpp b/CvGameCoreDLL_Expansion2/CvPlot.cpp
+index 0c5a80b..216f956 100644
+--- a/CvGameCoreDLL_Expansion2/CvPlot.cpp
++++ b/CvGameCoreDLL_Expansion2/CvPlot.cpp
+@@ -5115,7 +5115,7 @@ void CvPlot::setOwner(PlayerTypes eNewValue, int iAcquiringCityID, bool bCheckUn
+ 
+ 				if(getFeatureType() != NO_FEATURE)
+ 				{
+-					if(GC.getFeatureInfo(getFeatureType())->IsNaturalWonder())
++					if(GC.getFeatureInfo(getFeatureType())->IsNaturalWonder(true))
+ 					{
+ 						bShouldUpdateHappiness = true;
+ 					}
+@@ -5566,7 +5566,7 @@ void CvPlot::setFeatureType(FeatureTypes eNewValue, int iVariety)
+ 		if(eNewValue != NO_FEATURE)
+ 		{
+ 			// Now a Natural Wonder here
+-			if((eOldFeature == NO_FEATURE || !GC.getFeatureInfo(eOldFeature)->IsNaturalWonder()) && GC.getFeatureInfo(eNewValue)->IsNaturalWonder())
++			if((eOldFeature == NO_FEATURE || !GC.getFeatureInfo(eOldFeature)->IsNaturalWonder(true)) && GC.getFeatureInfo(eNewValue)->IsNaturalWonder(true))
+ 			{
+ 				GC.getMap().ChangeNumNaturalWonders(1);
+ 				GC.getMap().getArea(getArea())->ChangeNumNaturalWonders(1);
+@@ -5575,7 +5575,7 @@ void CvPlot::setFeatureType(FeatureTypes eNewValue, int iVariety)
+ 		if(eOldFeature != NO_FEATURE)
+ 		{
+ 			// Was a Natural Wonder, isn't any more
+-			if(GC.getFeatureInfo(eOldFeature)->IsNaturalWonder() && (eNewValue == NO_FEATURE || !GC.getFeatureInfo(eNewValue)->IsNaturalWonder()))
++			if(GC.getFeatureInfo(eOldFeature)->IsNaturalWonder(true) && (eNewValue == NO_FEATURE || !GC.getFeatureInfo(eNewValue)->IsNaturalWonder(true)))
+ 			{
+ 				GC.getMap().ChangeNumNaturalWonders(-1);
+ 				GC.getMap().getArea(getArea())->ChangeNumNaturalWonders(-1);
+@@ -5597,14 +5597,14 @@ void CvPlot::setFeatureType(FeatureTypes eNewValue, int iVariety)
+ 
+ //	--------------------------------------------------------------------------------
+ /// Does this plot have a natural wonder?
+-bool CvPlot::IsNaturalWonder() const
++bool CvPlot::IsNaturalWonder(bool orPseudoNatural) const
+ {
+ 	FeatureTypes eFeature = getFeatureType();
+ 
+ 	if(eFeature == NO_FEATURE)
+ 		return false;
+ 
+-	return GC.getFeatureInfo(eFeature)->IsNaturalWonder();
++	return GC.getFeatureInfo(eFeature)->IsNaturalWonder() || (orPseudoNatural && GC.getFeatureInfo(eFeature)->IsPseudoNaturalWonder());
+ }
+ 
+ //	--------------------------------------------------------------------------------
+@@ -6880,7 +6880,7 @@ int CvPlot::calculateNatureYield(YieldTypes eYield, TeamTypes eTeam, bool bIgnor
+ 	if(isImpassable() || isMountain())
+ 	{
+ 		// No Feature, or the Feature isn't a Natural Wonder (which are impassable but allowed to be worked)
+-		if(getFeatureType() == NO_FEATURE || !GC.getFeatureInfo(getFeatureType())->IsNaturalWonder())
++		if(getFeatureType() == NO_FEATURE || !GC.getFeatureInfo(getFeatureType())->IsNaturalWonder(true))
+ 		{
+ 			return 0;
+ 		}
+@@ -6965,7 +6965,7 @@ int CvPlot::calculateNatureYield(YieldTypes eYield, TeamTypes eTeam, bool bIgnor
+ 				}
+ 			}
+ 			// Natural Wonders
+-			if(m_eOwner != NO_PLAYER && pFeatureInfo->IsNaturalWonder())
++			if(m_eOwner != NO_PLAYER && pFeatureInfo->IsNaturalWonder(true))
+ 			{
+ 				int iMod = 0;
+ 
+@@ -8069,7 +8069,7 @@ bool CvPlot::setRevealed(TeamTypes eTeam, bool bNewValue, bool bTerrainOnly, Tea
+ 		{
+ 			if(getFeatureType() != NO_FEATURE)
+ 			{
+-				if(GC.getFeatureInfo(getFeatureType())->IsNaturalWonder())
++				if(GC.getFeatureInfo(getFeatureType())->IsNaturalWonder(true))
+ 				{
+ 					GET_TEAM(eTeam).ChangeNumNaturalWondersDiscovered(1);
+ 
+diff --git a/CvGameCoreDLL_Expansion2/CvPlot.h b/CvGameCoreDLL_Expansion2/CvPlot.h
+index df62de6..ad92fee 100644
+--- a/CvGameCoreDLL_Expansion2/CvPlot.h
++++ b/CvGameCoreDLL_Expansion2/CvPlot.h
+@@ -448,7 +448,7 @@ public:
+ 
+ 	void setFeatureType(FeatureTypes eNewValue, int iVariety = -1);
+ 
+-	bool IsNaturalWonder() const;
++	bool IsNaturalWonder(bool orPseudoNatural = false) const;
+ 
+ 	ResourceTypes getResourceType(TeamTypes eTeam = NO_TEAM) const;
+ 	ResourceTypes getNonObsoleteResourceType(TeamTypes eTeam = NO_TEAM) const;
+diff --git a/CvGameCoreDLL_Expansion2/CvUnit.cpp b/CvGameCoreDLL_Expansion2/CvUnit.cpp
+index 9b784a0..03c4bcd 100644
+--- a/CvGameCoreDLL_Expansion2/CvUnit.cpp
++++ b/CvGameCoreDLL_Expansion2/CvUnit.cpp
+@@ -13413,7 +13413,7 @@ void CvUnit::setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow, bool b
+ 
+ 				// Natural wonder that provides free promotions?
+ 				FeatureTypes eFeature = pAdjacentPlot->getFeatureType();
+-				if(eFeature != NO_FEATURE && GC.getFeatureInfo(eFeature)->IsNaturalWonder())
++				if(eFeature != NO_FEATURE && GC.getFeatureInfo(eFeature)->IsNaturalWonder(true))
+ 				{
+ 					PromotionTypes ePromotion = (PromotionTypes)GC.getFeatureInfo(eFeature)->getAdjacentUnitFreePromotion();
+ 					if(ePromotion != NO_PROMOTION)
+diff --git a/CvGameCoreDLL_Expansion2/CvVotingClasses.cpp b/CvGameCoreDLL_Expansion2/CvVotingClasses.cpp
+index e2d88a0..3a854c0 100644
+--- a/CvGameCoreDLL_Expansion2/CvVotingClasses.cpp
++++ b/CvGameCoreDLL_Expansion2/CvVotingClasses.cpp
+@@ -3890,7 +3890,7 @@ int CvLeague::GetFeatureYieldChange(FeatureTypes eFeature, YieldTypes eYield)
+ 	if (pInfo)
+ 	{
+ 		// Natural Wonders
+-		if (pInfo->IsNaturalWonder())
++		if (pInfo->IsNaturalWonder(true))
+ 		{
+ 			int iNaturalWonderMod = 0;
+ 			if (eYield == YIELD_CULTURE)
+diff --git a/CvGameCoreDLL_Expansion2/CvWorldBuilderMapLoader.cpp b/CvGameCoreDLL_Expansion2/CvWorldBuilderMapLoader.cpp
+index e869163..1c125b4 100644
+--- a/CvGameCoreDLL_Expansion2/CvWorldBuilderMapLoader.cpp
++++ b/CvGameCoreDLL_Expansion2/CvWorldBuilderMapLoader.cpp
+@@ -1348,7 +1348,7 @@ bool CvWorldBuilderMapLoader::Save(const wchar_t* wszFilename, const char* szMap
+ 		else
+ 		{
+ 			CvFeatureInfo* pkFeatureInfo = GC.getFeatureInfo(eFeatureType);
+-			if(pkFeatureInfo != NULL && pkFeatureInfo->IsNaturalWonder())
++			if(pkFeatureInfo != NULL && pkFeatureInfo->IsNaturalWonder())	//TODO: Not sure whether to include PseudoNatural Wonders here...
+ 			{
+ 				kPlotData.SetFeatureType(CvWorldBuilderMap::PlotMapData::InvalidFeature);
+ 				kPlotData.SetNaturalWonderType((byte)eFeatureType);
+-- 
+2.9.0.windows.1
+
